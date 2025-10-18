@@ -18,7 +18,8 @@ TOP_K = 3
 
 
 # Log in using your token
-login(token="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")
+YOUR_HF_TOKEN = "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" # Replace with your actual token
+login(token=YOUR_HF_TOKEN)
 
 # -----------------------
 # 📄 Sample Knowledge Base
@@ -88,5 +89,6 @@ gr_app = gr.Interface(
 # -----------------------
 if __name__ == "__main__":
     gr_app.launch()
+
 
 
