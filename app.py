@@ -5,6 +5,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 from langchain.vectorstores import Chroma
 from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.schema import Document
+from huggingface_hub import login
 
 # -----------------------
 # 🔧 Config
@@ -13,6 +14,11 @@ EMBED_MODEL = "BAAI/bge-base-en-v1.5"
 LLM_MODEL = "google/gemma-2b-it"
 VECTOR_DIR = "docs/chroma/"
 TOP_K = 3
+
+
+
+# Log in using your token
+login(token="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")
 
 # -----------------------
 # 📄 Sample Knowledge Base
@@ -82,3 +88,4 @@ gr_app = gr.Interface(
 # -----------------------
 if __name__ == "__main__":
     gr_app.launch()
+
